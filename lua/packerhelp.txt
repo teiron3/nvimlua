@@ -1,0 +1,13 @@
+Packer Pluginの設定
+
+install
+ コマンドを実行
+ (linux)
+	 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ (windows)
+ 	git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+
+Pluginを設定するファイルを読み込む
+	現在は、lua/packersetup.luaに記載
+neovimを起動して :PackerInsatall :PackerCompoleを実行
