@@ -1,3 +1,3 @@
-require('keymaps')
-require('config')
 require('packersetup')
+require('config')
+require('keymaps')

@@ -14,6 +14,8 @@ local nmodetable = { 'n', {
 	{ '<Tab>f', '<cmd>lua require("telescope.builtin").find_files()<cr>' },
 	{ '<Tab>b', '<cmd>lua require("telescope.builtin").buffers()<cr>' },
 	{ '<Tab>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
+	{ '<Tab>`', '<cmd>lua require("telescope.builtin").jumplist()<cr>' },
+	{ '<Tab>p', '<cmd>lua require("telescope.builtin").registers()<cr>' },
 	{ '<Tab>h', '<cmd>lua require("telescope.builtin").help_tags()<cr>' }
 } }
 
@@ -28,7 +30,7 @@ tablemap(tmodetable)
 
 tablemap({ 'n', {
 	{ 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
-	{ 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>' },
+	{ 'gf', '<cmd>lua vim.lsp.buf.format()<CR>' },
 	{ 'gr', '<cmd>lua vim.lsp.buf.references()<CR>' },
 	{ 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>' },
 	{ 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>' },
