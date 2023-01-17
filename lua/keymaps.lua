@@ -32,3 +32,17 @@ tablemap('i', imodetable)
 tablemap('n', nmodetable)
 tablemap('t', tmodetable)
 
+tablemap('n', {
+	{'K',  '<cmd>lua vim.lsp.buf.hover()<CR>'},
+	{'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>'},
+	{'gr', '<cmd>lua vim.lsp.buf.references()<CR>'},
+	{'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'},
+	{'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>'},
+	{'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>'},
+	{'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>'},
+	{'gn', '<cmd>lua vim.lsp.buf.rename()<CR>'},
+	{'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>'},
+	{'ge', '<cmd>lua vim.diagnostic.open_float()<CR>'},
+	{'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>'},
+	{'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>'},
+})
