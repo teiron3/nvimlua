@@ -1,38 +1,32 @@
 --vim.g.mapleader = " "
-local tablemap = function(k, tbl)
-	for key, value in ipairs(tbl) do
-		vim.api.nvim_set_keymap(k, value[1], value[2], { noremap = true, silent = true })
+local tablemap = function(tbl)
+	for key, value in ipairs(tbl[2]) do
+		vim.api.nvim_set_keymap(tbl[1], value[1], value[2], { noremap = true, silent = true })
 	end
 end
-local imap = function(k, v)
-	vim.api.nvim_set_keymap("i", k, v, { noremap = true, silent = true })
-end
-local nmap = function(k, v)
-	vim.api.nvim_set_keymap("n", k, v, { noremap = true, silent = true })
-end
-local tmap = function(k, v)
-	vim.api.nvim_set_keymap("t", k, v, { noremap = true, silent = true })
-end
-local imodetable = {
+
+local imodetable = { 'i', {
 	{ 'jj', '<Esc>' },
-}
-local nmodetable = {
+} }
+local nmodetable = { 'n', {
 	{ "<Tab><Tab>", "<C-w>w" },
 	{ "<Tab>b", ":bn<CR>" },
 	{ '<Tab>f', '<cmd>lua require("telescope.builtin").find_files()<cr>' },
 	{ '<Tab>b', '<cmd>lua require("telescope.builtin").buffers()<cr>' },
+	{ '<Tab>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
 	{ '<Tab>h', '<cmd>lua require("telescope.builtin").help_tags()<cr>' }
-}
-local tmodetable = {
+} }
+
+local tmodetable = { 't', {
 	{ "<Tab><Tab>", "<C-\\><C-n><C-w>w" },
 	{ "<Tab>b", "<C-\\><C-n>:bn<CR>" }
-}
+} }
 
-tablemap('i', imodetable)
-tablemap('n', nmodetable)
-tablemap('t', tmodetable)
+tablemap(imodetable)
+tablemap(nmodetable)
+tablemap(tmodetable)
 
-tablemap('n', {
+tablemap({ 'n', {
 	{ 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
 	{ 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>' },
 	{ 'gr', '<cmd>lua vim.lsp.buf.references()<CR>' },
@@ -45,4 +39,4 @@ tablemap('n', {
 	{ 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>' },
 	{ 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>' },
 	{ 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
-})
+} })
