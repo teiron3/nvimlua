@@ -30,7 +30,7 @@ tablemap(tmodetable)
 
 tablemap({ 'n', {
 	{ 'K', '<cmd>lua vim.lsp.buf.hover()<CR>' },
-	{ 'gf', '<cmd>lua vim.lsp.buf.format()<CR>' },
+	{ 'gf', '<cmd>lua if vim.lsp.buf.formatting then vim.lsp.buf.formatting() else vim.lsp.buf.format() end<CR>' },
 	{ 'gr', '<cmd>lua vim.lsp.buf.references()<CR>' },
 	{ 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>' },
 	{ 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>' },
