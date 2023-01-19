@@ -25,5 +25,15 @@
         "[$TM_SELECTED_TEXT]: url"
     ],
     "description": "Link for selected text"
-  }
+  },
+	"Markup01": {
+  "prefix": ["sectionBlock"],
+  "body": [
+      "<section id=\"$1\">",
+      "\t<div class=\"$2\">",
+      "\t\t$3",
+      "\t</div>",
+      "</section>"
+  ]
+}
 }
