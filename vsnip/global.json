@@ -1,0 +1,29 @@
+{
+  "Add": {
+    "prefix": ["add"],
+    "body": [
+      "---",
+      "**追記 ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}**  ",
+      "**追記ここまで**",
+      "",
+      "---"
+    ],
+    "description": "追記"
+  },
+  "LastMod": {
+    "prefix": ["last"],
+    "body": [
+      "lastmod:${VIM:strftime(\"%Y-%m-%dT%H:%M:%S+09:00\")}"
+    ],
+    "description": "更新日"
+  },
+  "Link": {
+    "prefix": ["link"],
+    "body": [
+        "[$TM_SELECTED_TEXT][]",
+        "",
+        "[$TM_SELECTED_TEXT]: url"
+    ],
+    "description": "Link for selected text"
+  }
+}
