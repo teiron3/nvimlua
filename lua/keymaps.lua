@@ -42,3 +42,6 @@ tablemap({ 'n', {
 	{ 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>' },
 	{ 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
 } })
+
+vim.cmd([[imap <silent><expr> <C-k> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-k>']])
+vim.cmd([[smap <silent><expr> <C-k> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-k>']])
